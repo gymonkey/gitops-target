@@ -5,7 +5,7 @@ metadata:
   labels:
     app: testhello
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: testhello
@@ -17,7 +17,3 @@ spec:
       containers:
       - name: testhello
         image: registry.cn-hangzhou.aliyuncs.com/test_lyt/test_server:v1
-    resources:
-      limits:
-        cpu: 200m
-        memory: 128Mi
