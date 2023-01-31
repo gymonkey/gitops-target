@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fluxcd-deployment
+  labels:
+    app: testhello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testhello
+  template:
+    metadata:
+      labels:
+        app: testhello
+    spec:
+      containers:
+      - name: testhello
+        image: registry.cn-hangzhou.aliyuncs.com/test_lyt/test_server:v1
+    resources:
+      limits:
+        cpu: 200m
+        memory: 128Mi
